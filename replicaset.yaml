@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-app
+  labels: 
+    servicetier: dev
+    app: myapp-rc
+
+spec:
+  template: 
+    metadata: 
+      name: rs-app
+      labels: 
+        servicetier: dev
+        app: myapp-rc
+    spec:
+      containers:
+        - name: ReplicaSet-app
+          image: nginx
+  replicas: 3
+  selector: 
+    matchLabels: # Major difference between replication controller and replica set
+      app: myapp-rc
