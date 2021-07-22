@@ -19,7 +19,10 @@ kubectl get replicaset
 #Delete Commands#
 kubectl delete replicaset myapp-replicaset
 
-#Deployment Rollout#
+#Deployment#
+kubectl create -f deployment/myapp-deployment
+kubectl create -f deployment/myapp-deployment --record
 kubectl rollout status deployment/myapp-deployment
 kubectl rollout history deployment/myapp-deployment
-kubectl rollout undo deployment/myapp-deployment 
+kubectl rollout undo deployment/myapp-deployment
+kubectl set image deployment myapp-deployment nginx=nginx:1.18 --record
