@@ -1,0 +1,25 @@
+#Create Commands#
+kubectl create -f replicaset.yaml
+
+
+#Scale Commands#
+kubectl scale --replicas=6 -f replicaset.yaml  #Scale replicaset
+
+
+
+#Replace Commands#
+kubectl replace -f replicaset.yaml #After the replica set is updated
+
+
+#Get Command#
+kubectl get replicaset
+
+
+
+#Delete Commands#
+kubectl delete replicaset myapp-replicaset
+
+#Deployment Rollout#
+kubectl rollout status deployment/myapp-deployment
+kubectl rollout history deployment/myapp-deployment
+kubectl rollout undo deployment/myapp-deployment 
