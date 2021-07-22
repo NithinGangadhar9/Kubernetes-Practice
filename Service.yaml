@@ -10,5 +10,5 @@ spec:
     type: frontend
   ports:
   - port: 80
-    targetPort: 80 # Only mandatory field
+    targetPort: 80 #Only mandatory field
     nodePort: 30021 #Valid Range 30000 - 32767
